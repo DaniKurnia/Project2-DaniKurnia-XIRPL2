@@ -113,6 +113,33 @@ public class DataSiswa extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("DATA SISWA");
 
+         cmdHapus.setText("Hapus");
+        cmdHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdHapusActionPerformed(evt);
+            }
+        });
+
+        cmdUbah.setText("Ubah");
+        cmdUbah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdUbahActionPerformed(evt);
+            }
+        });
+
+        cmdTambah.setText("Tambah");
+        cmdTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdTambahActionPerformed(evt);
+            }
+        });
+
+        cmdRefresh.setText("Refresh");
+        cmdRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdRefreshActionPerformed(evt);
+            }
+        });
        
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,11 +184,11 @@ public class DataSiswa extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmdTambahActionPerformed(java.awt.event.ActionEvent evt) {
+     private void cmdTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdTambahActionPerformed
         // TODO add your handling code here:
-        ManageData tambahData = new ManageData(this, true);
+        ManageData tambahData = new ManageData(this, true, "Tambah","");
         tambahData.setVisible(true);
-    }
+    }//GEN-LAST:event_cmdTambahActionPerformed
     
       int baris;
     private void t_siswaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_siswaMouseClicked
@@ -189,6 +216,18 @@ public class DataSiswa extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cmdHapusActionPerformed
     
+      private void cmdUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdUbahActionPerformed
+        // TODO add your handling code here:
+        String nis = t_siswa.getValueAt(baris,1).toString();
+        ManageData tambahData = new ManageData(this,true, "Edit", nis);
+        tambahData.setVisible(true);
+    }//GEN-LAST:event_cmdUbahActionPerformed
+
+    private void cmdRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdRefreshActionPerformed
+        // TODO add your handling code here:
+        showData();
+    }//GEN-LAST:event_cmdRefreshActionPerformed
+     
     /**
      * @param args the command line arguments
      */
