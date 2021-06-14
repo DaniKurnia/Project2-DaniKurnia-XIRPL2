@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Ttngrh
+ * @author Dani Kurnia
  */
 public class ManageData extends javax.swing.JDialog {
 
